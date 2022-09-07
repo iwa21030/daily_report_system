@@ -57,6 +57,7 @@ public abstract class ActionBase {
 	 */
 	protected void invoke()
 			throws ServletException,IOException{
+
 		Method commandMethod;
 		try {
 
@@ -73,6 +74,7 @@ public abstract class ActionBase {
 
 			//発生した例外をコンソールに表示
 			e.printStackTrace();
+			//commandの値が不正で実行できない場合エラー画面を呼び出し
 			forward(ForwardConst.FW_ERR_UNKNOWN);
 
 		}

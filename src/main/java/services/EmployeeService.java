@@ -1,5 +1,5 @@
 
-package service;
+package services;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -24,7 +24,7 @@ public class EmployeeService extends ServiceBase{
 	 * @param page ページ数
 	 * @return 表示するデータのリスト
 	 */
-	public  List<EmployeeView> getPerPage(int page) {
+	public List<EmployeeView> getPerPage(int page) {
 		List <Employee> employees = em.createNamedQuery(JpaConst.Q_EMP_GET_ALL, Employee.class)
 				.setFirstResult(JpaConst.ROW_PER_PAGE * (page - 1))
 				.setMaxResults(JpaConst.ROW_PER_PAGE)
